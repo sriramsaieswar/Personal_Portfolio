@@ -1,26 +1,26 @@
 [
   {
     "id": 1,
-    "title": "AI Resume Screening System with Chatbot Integration",
-    "description": "Developing a comprehensive web application to revolutionize recruitment by automating resume screening and enhancing candidate engagement. This system leverages advanced AI/NLP to accurately parse resumes, semantically match candidates to job descriptions, and provide explainable, bias-mitigated scores. It features a proactive, AI-driven chatbot offering real-time resume feedback to candidates before submission, alongside robust HR tools for collaborative evaluation and intelligent insights.",
-    "techStack": ["React.js", "Node.js (Express)", "AI/NLP", "MongoDB", "Cloudflare R2", "Auth.js", "Rasa Open Source"],
+    "title": "Movie Match – Movie Recommendation Engine",
+    "description": "A machine learning-based movie recommender that analyzes metadata and computes similarity scores to suggest relevant titles. Implements content-based filtering using cosinesimilarity, with a responsive web interface built in gradio.",
+    "techStack": ["Python", "gradio", "Pandas", "NumPy", " Scikit-learn", " Pickle"],
     "imageSrc": "./assets/resume.jpg",
-    "githubLink": "https://github.com/Anvitha-git/ai-resume-screening.git"
+    "githubLink": "https://github.com/sriramsaieswar/movie-recommender-system"
   },
   {
     "id": 2,
-    "title": "Student Mental Health Analysis (SQL)",
-    "description": "An in-depth SQL-based project focused on analyzing student mental health data. This project demonstrates strong database management, advanced querying techniques, and the ability to extract meaningful insights from structured data for sociological and health-related applications.",
-    "techStack": ["SQL", "Database Management", "Data Analysis", "MySQL"],
+    "title": "Heart Disease Prediction Model",
+    "description": "Eveloped an interactive web application using Streamlit that collects key healthparameters and predicts heart-disease risk using a Logistic Regression model. Performed datapreprocessing and model evaluation to build a reliable Logistic Regression classifier that deliversaccurate, real time heart-disease risk assessments for users.",
+    "techStack": ["PythonL", "NumPy", "Pandas"," Scikit-learn", "Streamlit"],
     "imageSrc": "./assets/mental_health_sql.jpg",
-    "githubLink": "https://github.com/pranavv1210/Student-Mental-Health-Analysis-SQL.git"
+    "githubLink": "https://github.com/sriramsaieswar/HEART-DISEASE-PREDICTION-MODEL"
   },
   {
     "id": 4,
-    "title": "Document Editor using AI",
-    "description": "An innovative AI-powered document editor designed to enhance productivity and content creation. It leverages advanced Natural Language Processing (NLP) and Machine Learning models to offer intelligent features like grammar correction, style suggestions, content summarization, and automated text generation within a user-friendly interface.",
-    "techStack": ["AI", "NLP", "Machine Learning", "Python", "Web Development"],
+    "title": "HealthHub– Online Healthcare Platform",
+    "description": "HealthHub is a comprehensive online healthcare platform offering timely healthtips, interactive tools, insightful blogs, and global health statistics. Key features include a BMIcalculator, real-time COVID-19 updates, and informative articles designed to support users inmaintaining a healthy lifestyle.",
+    "techStack": ["HTML","CSS","JS"],
     "imageSrc": "./assets/document_editor_ai.jpg",
-    "githubLink": "https://github.com/pranavv1210/Document-Editor-using-AI.git"
+    "githubLink": "https://sriramsaieswar.github.io/Health-Hub/"
   }
 ]

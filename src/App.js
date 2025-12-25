@@ -1,24 +1,29 @@
 import React, { useState, useRef, useEffect, forwardRef, useCallback, useImperativeHandle, useMemo } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
+import { SiOracle, SiEdx, SiNptel } from "react-icons/si";
 import {
-  FaEnvelope, FaPhone, FaInstagram, FaLinkedin, FaYoutube, FaHome, FaUser, FaBriefcase, FaPaperPlane, FaGithub, FaGraduationCap,
+  FaEnvelope,FaCss3Alt,FaMedal,FaJs, FaPhone,FaLinux, FaInstagram, FaLinkedin, FaYoutube, FaHome, FaUser, FaBriefcase, FaPaperPlane, FaGithub, FaGraduationCap,
   FaPython, FaJsSquare, FaReact, FaNodeJs, FaDatabase, FaGitAlt, FaAws,
   FaJava, FaFigma, FaWindows, FaCode, FaChartBar, FaChartPie, FaMobileAlt, FaFlask, FaCameraRetro, FaLeaf, FaRobot, // Existing and alternative FA icons
-  FaHtml5, FaCss3 // New FA icons for Web Technology
+  FaHtml5, FaCss3, // New FA icons for Web Technology
+  FaSalesforce
 } from "react-icons/fa";
 import {
-  SiTensorflow, // Existing SI icon
-  SiMongodb, SiMysql // Only these specific SI icons are now imported
+  SiGooglecolab,SiMatplotlib,
+  SiTensorflow,SiDjango, // Existing SI icon
+  SiMongodb, SiMysql,SiPytorch,SiScikitlearn,SiPandas,SiNumpy,SiVisualstudiocode// Only these specific SI icons are now imported
 } from "react-icons/si";
 
 import projects from "./projects.json";
+import { FaCertificate } from "react-icons/fa";
+
 import ErrorBoundary from "./ErrorBoundary";
 import VariableProximity from "./VariableProximity";
 // import Aurora from "./Aurora"; // COMMENTED OUT: Removed due to OGL build issues
 import TiltedCard from "./TiltedCard";
 import { ScrollVelocity } from "./ScrollVelocity";
 import Dock from "./Dock";
-import pranavPhoto from "./assets/pranav-photo.jpg";
+import pranavPhoto from "./assets/Eswar-img.jpg";
 import githubCtaBg from "./assets/image_616736.jpg";
 import resumeProjectImage from './assets/resume.png'; // Make sure this is .png or .jpg based on your file
 import ageProjectImage from './assets/age.jpg';
@@ -239,6 +244,8 @@ function cn(...classes) {
 }
 
 function App() {
+  const certificationsRef = useRef(null);
+
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
   const educationRef = useRef(null);
@@ -259,6 +266,7 @@ function App() {
       { link: "#home", text: "Home", ref: homeRef },
       { link: "#about", text: "About Me", ref: aboutRef },
       { link: "#education", text: "Education", ref: educationRef },
+       { link: "#certifications", text: "Certifications", ref: certificationsRef }, // ✅ NEW
       { link: "#projects", text: "My Works", ref: projectsRef },
       {
         link: "#github-projects",
@@ -341,37 +349,63 @@ function App() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
 
-  const captions = [
-    "Emerging AIML Engineer",
-    "AI Enthusiast",
-    "Innovator in Tech",
-  ];
+const captions = [
+  
+  "Emerging AIML Engineer",
+  "AI Enthusiast",
+  
+  "Problem Solver",
+  "Future Data Engineer"
+];
+
 
   // General Skills for Progress Bars
   const generalSkills = useMemo(() => [
     { name: "Python", level: 90 },
-    { name: "C", level: 70 },
-    { name: "Data Analytics", level: 80 },
+    { name: "Java", level: 70 },
+    { name: "C", level: 80 },
     { name: "Web Development", level: 85 },
     { name: "Machine Learning", level: 90 },
+    { name: "SQL", level: 90 },
   ], []);
 
   // Logos for Other Skills and Frameworks
   const otherSkillsLogos = useMemo(() => [
     { name: "Python", icon: <FaPython style={{ color: "#3776AB" }} /> },
-    { name: "C", icon: <span className="text-white text-3xl font-bold">C</span> },
+    
     { name: "Java", icon: <FaJava style={{ color: "#007396" }} /> },
-    { name: "MongoDB", icon: <SiMongodb style={{ color: "#47A248" }} /> },
+    { name: "C", icon: <span className="text-white text-3xl font-bold">C</span> },
+    
     { name: "MySQL", icon: <SiMysql style={{ color: "#4479A1" }} /> },
-    { name: "Node.js", icon: <FaNodeJs style={{ color: "#339933" }} /> },
+    { name: "MongoDB", icon: <SiMongodb style={{ color: "#47A248" }} /> },
+        { name: "HTML", icon: <FaHtml5 style={{ color: "#E34F26" }} /> },
+    { name: "CSS", icon: <FaCss3 style={{ color: "#1572B6" }} /> },
+    { name: "JavaScript", icon: <FaJsSquare style={{ color: "#F7DF1E" }} /> },
+    // { name: "Node.js", icon: <FaNodeJs style={{ color: "#339933" }} /> },
     { name: "React", icon: <FaReact style={{ color: "#61DAFB" }} /> },
+    { name: "Django", icon: <SiDjango style={{ color: "#20e499ff" }} /> },
+    // { name: "AWS", icon: <FaReact style={{ color: "#e8f0f2ff" }} /> },
     // Removed Docker
     // Removed Kubernetes
     { name: "Git", icon: <FaGitAlt style={{ color: "#F05032" }} /> },
     { name: "GitHub", icon: <FaGithub style={{ color: "#FFFFFF" }} /> },
-    { name: "HTML", icon: <FaHtml5 style={{ color: "#E34F26" }} /> },
-    { name: "CSS", icon: <FaCss3 style={{ color: "#1572B6" }} /> },
-    { name: "JavaScript", icon: <FaJsSquare style={{ color: "#F7DF1E" }} /> },
+
+    { name: "AWS", icon: <FaAws style={{ color: "#FF9900" }} /> },
+    { name: "Linux", icon: <FaLinux style={{ color: "#FCC624" }} /> },
+    { name: "TensorFlow", icon: <SiTensorflow style={{ color: "#FF6F00" }} /> },
+{ name: "PyTorch", icon: <SiPytorch style={{ color: "#EE4C2C" }} /> },
+{ name: "Scikit-learn", icon: <SiScikitlearn style={{ color: "#F7931E" }} /> },
+{ name: "Pandas", icon: <SiPandas style={{ color: "#150458" }} /> },
+{ name: "NumPy", icon: <SiNumpy style={{ color: "#013243" }} /> },
+//{ name: "Matplotlib", icon: <SiMatplotlib style={{ color: "#11557C" }} /> },
+
+{ name: "Google Colab", icon: <SiGooglecolab style={{ color: "#F9AB00" }} /> },
+
+//{ name: "VS Code", icon: <SiVisualstudiocode style={{ color: "#007ACC" }} /> },
+
+
+    //{ name: "Linux", icon: <FaLinux style={{ color: "#FCC624" }} /> },
+    // { name: "VS Code", icon: <SiVisualstudiocode style={{ color: "#007ACC" }} /> },
     // Removed LangChain
   ], []);
 
@@ -380,24 +414,152 @@ function App() {
   const educationData = useMemo(() => [
     {
       id: 1,
-      year: "2022-Present",
-      degree: "B.E. in Artificial Intelligence and Machine Learning",
-      institution: "CMR Institute of Technology",
-      details: "CGPA: 8.46 (expected 2026)" // Updated CGPA
+      year: "2023-Present",
+      degree: "B.Tech. in Artificial Intelligence and Machine Learning",
+      institution: "Pragati Engineering College",
+      details: "CGPA: 8.19 (expected 2027)" // Updated CGPA
     },
     {
       id: 2,
-      year: "2020-2022",
-      degree: "Pre-University Board (PCMB)",
-      institution: "St. Joseph's Pre-University College",
+      year: "2021-2023",
+      degree: "Intermediate",
+      institution: "Sri Chaitanya Junior College",
     },
-    {
-    "id": 3,
-      "year": "2007-2020",
-      "degree": "International Council of Secondary Education (ICSE)",
-      "institution": "Cambridge School"
-    }
+    // {
+    // "id": 3,
+    //   "year": "2007-2020",
+    //   "degree": "International Council of Secondary Education (ICSE)",
+    //   "institution": "Cambridge School"
+    // }
   ], []);
+const certificationsData = useMemo(() => [
+  {
+    id: 1,
+    title: "Certified Agentforce Specialist",
+    provider: "Salesforce",
+    year: "2025",
+    icon: <FaSalesforce className="text-sky-400 text-4xl" />,
+    link: "https://drive.google.com/file/d/1Jjj0PX_mWTVcG1B_cr8VQxtVVmcK1AEW/view?usp=drive_link",
+  },
+  {
+    id: 2,
+    title: "Certified AI Foundations Associate",
+    provider: "Oracle",
+    year: "2025",
+    icon: <SiOracle className="text-red-500 text-4xl" />,
+    link: "https://drive.google.com/file/d/189z2obctUPeZ7p4P7Pfg0-v29iRRfvDU/view?usp=drive_link",
+  },
+    {
+    id: 3,
+    title: "Web Development (HTML, CSS, JS)",
+    provider: "edX",
+    year: "2024",
+    icon: (
+      <div className="flex gap-2 text-4xl">
+        <FaHtml5 className="text-orange-500" />
+        <FaCss3Alt className="text-blue-500" />
+        <FaJs className="text-yellow-400" />
+      </div>
+    ),
+    link: "https://courses.edx.org/certificates/b50747fd786949c68677d7df36be938a",
+  },
+      {
+    id: 4,
+    title: "Python ",
+    provider: "Guvi",
+    year: "2024",
+    icon: (
+      <div className="flex gap-2 items-center text-4xl">
+        <FaPython className="text-yellow-400" />
+        {/* <FaMedal className="text-gray-300" /> */}
+      </div>
+    ),
+    link: "https://drive.google.com/file/d/10PvzhcFKAeNMYAoBbtks2Vnn585U3gac/view?usp=sharing",
+  },
+
+
+  {
+    id: 5,
+    title: "Java Programming Fundamentals",
+    provider: "edx",
+    year: "2024",
+    icon: <FaJava className="text-red-400 text-4xl" />,
+    link: "https://courses.edx.org/certificates/4d30bfc8c94d48a49f39869cf80c172b",
+  }, 
+  {
+    id: 6,
+    title: "The Joy of Computing Using Python (Elite + Silver)",
+    provider: "NPTEL",
+    year: "2024",
+    icon: (
+      <div className="flex gap-2 items-center text-4xl">
+        <FaPython className="text-yellow-400" />
+        <FaMedal className="text-gray-300" />
+      </div>
+    ),
+    link: "https://drive.google.com/file/d/1hyyFYm_Qh9w1WyL9yKlBuA4kksMT-o31/view?usp=drive_link",
+  },
+  {
+    id: 7,
+    title: "Oracle Cloud Infrastructure 2025 Certified Architect Associate",
+    provider: "Oracle",
+    year: "2025",
+    icon: <SiOracle className="text-red-500 text-4xl" />,
+    link: "https://drive.google.com/file/d/1M5BKd3yKkTaapRQqqCwftC-6bK-hjvBb/view?usp=sharing",
+  },
+  {
+    id: 8,
+    title: "Oracle Cloud Infrastructure 2025 Certified Developer Professional",
+    provider: "Oracle",
+    year: "2025",
+    icon: <SiOracle className="text-red-500 text-4xl" />,
+    link: "https://drive.google.com/file/d/1QteCu7G2WCuNd52AfS2O627ZotOuoFPG/view?usp=sharing",
+  },
+  {
+    id: 9,
+    title: "Oracle Cloud Infrastructure 2025 Certified Foundations Associate",
+    provider: "Oracle",
+    year: "2025",
+    icon: <SiOracle className="text-red-500 text-4xl" />,
+    link: "https://drive.google.com/file/d/1RThldlrLMMdgm6OT9O_Egny5tUsdA1ox/view?usp=sharing",
+  },
+  {
+    id: 10,
+    title: "Oracle Data Platform 2025 Certified Foundations Associate",
+    provider: "Oracle",
+    year: "2025",
+    icon: <SiOracle className="text-red-500 text-4xl" />,
+    link: "https://drive.google.com/file/d/1ZwAxsX7NNUcIip7_oR43lLPozfdMtKr9/view?usp=sharing",
+  },
+      {
+    id: 11,
+    title: "ChatGPT Prompt Engineering for Developers",
+    provider: "DeepLearning.AI",
+    year: "2024",
+    icon: (
+      <div className="flex gap-2 items-center text-4xl">
+        {/* <Faai className="text-yellow-400" /> */}
+        {/* <FaMedal className="text-gray-300" /> */}
+      </div>
+    ),
+    link: "https://learn.deeplearning.ai/accomplishments/52227b43-a72b-4cf2-bf17-2d2361ce1071?usp=sharing",
+  },
+      {
+    id: 12,
+    title: "CSX0001: Computer Science 101",
+    provider: "edx",
+    year: "2024",
+    icon: (
+      <div className="flex gap-2 items-center text-4xl">
+        {/* <FaPython className="text-yellow-400" /> */}
+        {/* <FaMedal className="text-gray-300" /> */}
+      </div>
+    ),
+    link: "https://drive.google.com/file/d/1qugSpBEXCdOQC7Sp1MtIolQ5HfgCZDt2/view?usp=sharing",
+  },
+], []);
+
+
 
   // Map project image paths to imported modules
   const projectImageMap = useMemo(() => ({
@@ -428,6 +590,13 @@ function App() {
       onClick: () => scrollToSection(educationRef, "education"),
       isActive: activeSection === "education",
     },
+    {
+  label: "Certifications",
+  icon: <FaCertificate size={24} color="#fff" />,
+  onClick: () => scrollToSection(certificationsRef, "certifications"),
+  isActive: activeSection === "certifications",
+},
+
     {
       label: "My Works",
       icon: <FaBriefcase size={24} color="#fff" />,
@@ -474,7 +643,8 @@ function App() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: "easeOut" }}
             >
-              PRANAV V
+              ESWAR
+              
             </motion.h1>
             <motion.div
               className="mt-2"
@@ -517,6 +687,7 @@ function App() {
               className="text-4xl md:text-5xl font-bold mb-10 text-center text-light-gray font-heading"
               variants={textVariants}
             >
+              
               About Me
             </motion.h2>
             <div className="flex flex-col md:flex-row items-center gap-10">
@@ -529,7 +700,7 @@ function App() {
               >
                 <TiltedCard
                   imageSrc={pranavPhoto}
-                  altText="Pranav V"
+                  altText="Eswar"
                   containerHeight="500px"
                   containerWidth="100%"
                   imageHeight="500px"
@@ -545,7 +716,7 @@ function App() {
                   variants={textVariants}
                 >
                   <VariableProximity
-                    label="I’m Pranav V, a 21-year-old AI/ML enthusiast born and raised in Bengaluru, currently pursuing my B.E. in Artificial Intelligence and Machine Learning at CMR Institute of Technology (CGPA: 8.46, expected 2026). Immersed in the city’s vibrant tech ecosystem, I thrive on coding, collaborating at hackathons, and building intelligent systems that tackle real-world challenges. Bengaluru’s innovation-driven spirit fuels my drive to explore the intersection of data, algorithms, and meaningful impact."
+                    label="I’m Eswar, a 21-year-old AI & Machine Learning enthusiast, currently pursuing my B.E. in Artificial Intelligence and Machine Learning at Pragati Engineering College with a CGPA of 8.19 (expected to graduate in 2027)."
                     fromFontVariationSettings="'wght' 400"
                     toFontVariationSettings="'wght' 900"
                     containerRef={aboutRef}
@@ -558,7 +729,7 @@ function App() {
                   variants={textVariants}
                 >
                   <VariableProximity
-                    label="Beyond academics, I find balance through creativity and sport. Cricket and table tennis sharpen my focus and teamwork, while dancing and painting give me space to express and recharge. I’m passionate about blending technology with human-centered design, aiming to contribute ethically to the future of AI. Whether I’m sketching, debugging, or just learning something new, I’m always pushing boundaries and eager to connect with like-minded innovators."
+                    label="Beyond academics, I maintain balance through cricket and chess, which enhance my focus, strategic thinking, and teamwork. I’m passionate about blending technology with human-centered design and aspire to contribute ethically and responsibly to the future of AI. Whether I’m debugging code, experimenting with new concepts, or learning something new, I’m always pushing boundaries and eager to connect with like-minded innovators."
                     fromFontVariationSettings="'wght' 400"
                     toFontVariationSettings="'wght' 900"
                     containerRef={aboutRef}
@@ -620,8 +791,8 @@ function App() {
             {/* Download Resume Button - Moved to be a direct child of the section */}
             <motion.div className="flex justify-center mt-10">
               <motion.a
-                href="/Pranav_V_Resume.pdf"
-                download="Pranav_V_Resume.pdf"
+                href="/M.Eswar-res.pdf"
+                download="M.Eswar-res.pdf"
                 className="relative inline-block px-8 py-3 text-white font-roboto text-lg font-semibold rounded-full overflow-hidden bg-gradient-to-r from-teal-500 to-blue-600 shadow-md hover:shadow-lg transition-all duration-300 group"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -671,6 +842,120 @@ function App() {
               ))}
             </div>
           </motion.section>
+ {/* Coding Profiles Section */}
+<motion.div
+  className="mt-12 flex flex-col items-center gap-6"
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+>
+  <h3 className="text-3xl font-bold text-white mb-6">Coding Profiles</h3>
+  <div className="flex gap-8 flex-wrap justify-center">
+    {/* LeetCode */}
+    <a
+      href="https://leetcode.com/u/23A31A42H9/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex flex-col items-center gap-2 px-16 py-12 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-xl shadow-lg transform transition-transform hover:scale-105 hover:shadow-2xl"
+    >
+      <img 
+        src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" 
+        alt="LeetCode" 
+        className="w-12 h-12"
+      />
+      <span className="text-white font-semibold text-lg">LeetCode</span>
+    </a>
+
+    {/* HackerRank */}
+    <a
+      href="https://www.hackerrank.com/profile/23A31A42H9"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex flex-col items-center gap-2 px-16 py-12 bg-gradient-to-r from-green-400 to-green-700 rounded-xl shadow-lg transform transition-transform hover:scale-105 hover:shadow-2xl"
+    >
+      <img 
+        src="https://upload.wikimedia.org/wikipedia/commons/6/65/HackerRank_logo.png" 
+        alt="HackerRank" 
+        className="w-12 h-12"
+      />
+      <span className="text-white font-semibold text-lg">HackerRank</span>
+    </a>
+     {/* GeeksforGeeks */}
+    <a
+      href="https://www.geeksforgeeks.org/profile/saieswar6nw9"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex flex-col items-center gap-2 px-16 py-12 bg-gradient-to-r from-green-500 to-green-800 rounded-xl shadow-lg transform transition-transform hover:scale-105 hover:shadow-2xl"
+    >
+      <img 
+        src="https://upload.wikimedia.org/wikipedia/commons/2/21/GeeksforGeeks_logo.png" 
+        alt="GeeksforGeeks" 
+        className="w-12 h-12"
+      />
+      <span className="text-white font-semibold text-lg">GeeksforGeeks</span>
+    </a>
+  </div>
+</motion.div>
+
+
+          {/* Certifications Section */}
+<motion.section
+  id="certifications"
+  ref={certificationsRef}
+  className="section-card py-16 px-6 max-w-7xl mx-auto my-12"
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.2 }}
+  variants={sectionVariants}
+>
+  <motion.h2
+    className="text-4xl md:text-5xl font-bold mb-10 text-center text-light-gray font-heading"
+    variants={textVariants}
+  >
+    Certifications
+  </motion.h2>
+
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    {certificationsData.map((cert, index) => (
+      <motion.div
+        key={cert.id}
+        className="p-6 bg-gray-700 bg-opacity-70 rounded-xl shadow-lg border border-gray-600 hover:scale-[1.03] transition-transform duration-300"
+        variants={textVariants}
+        custom={index}
+      >
+        <div className="flex justify-center mb-4">
+          {cert.icon}
+        </div>
+
+        <h3 className="text-xl font-bold text-white text-center mb-2">
+          {cert.title}
+        </h3>
+
+        <p className="text-gray-300 text-center">
+          {cert.provider}
+        </p>
+
+        <p className="text-sm text-gray-400 text-center mt-1">
+          {cert.year}
+        </p>
+
+        {cert.link && (
+          <div className="flex justify-center mt-4">
+            <a
+              href={cert.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-blue-300 underline text-sm"
+            >
+              View Certificate
+            </a>
+          </div>
+        )}
+      </motion.div>
+    ))}
+  </div>
+</motion.section>
+
 
           {/* Projects Section - My Works */}
           <motion.section
@@ -765,7 +1050,7 @@ function App() {
               Check Out!!
             </motion.p>
             <motion.a
-              href="https://github.com/pranavv1210"
+              href="https://github.com/sriramsaieswar"
               target="_blank"
               rel="noopener noreferrer"
               className="px-10 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold text-lg rounded-full shadow-lg hover:bg-orange-600 hover:shadow-xl transform hover:scale-105 transition-all duration-300"
@@ -802,20 +1087,20 @@ function App() {
               variants={textVariants}
             >
               <motion.a
-                href="mailto:pranavv736@gmail.com"
+                href="mailto:saieswarmallina@gmail.com"
                 className="text-light-gray hover:text-blue-400 transform hover:scale-125 transition-transform duration-200"
-                aria-label="Email Pranav"
+                aria-label="Email Eswar"
               >
                 <FaEnvelope size={40} />
               </motion.a>
               <motion.a
-                href="tel:+917676858328"
+                href="tel:+919392672499"
                 className="text-light-gray hover:text-green-400 transform hover:scale-125 transition-transform duration-200"
-                aria-label="Call Pranav"
+                aria-label="Call Eswar"
               >
                 <FaPhone size={40} />
               </motion.a>
-              <motion.a
+              {/* <motion.a
                 href="https://www.instagram.com/pranavvenu_/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -823,26 +1108,26 @@ function App() {
                 aria-label="Visit Pranav's Instagram"
               >
                 <FaInstagram size={40} />
-              </motion.a>
+              </motion.a> */}
               <motion.a
-                href="https://www.linkedin.com/in/pranav-venu-550729264/"
+                href="https://www.linkedin.com/in/m-sriram-sai-eswar/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-light-gray hover:text-blue-500 transform hover:scale-125 transition-transform duration-200"
-                aria-label="Visit Pranav's LinkedIn"
+                aria-label="Visit Eswar's LinkedIn"
               >
                 <FaLinkedin size={40} />
               </motion.a>
               <motion.a
-                href="https://github.com/pranavv1210"
+                href="https://github.com/sriramsaieswar"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-light-gray hover:text-gray-400 transform hover:scale-125 transition-transform duration-200"
-                aria-label="Visit Pranav's GitHub"
+                aria-label="Visit Eswar's GitHub"
               >
                 <FaGithub size={40} />
               </motion.a>
-              <motion.a
+              {/* <motion.a
                 href="https://www.youtube.com/@pranavvenu"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -850,12 +1135,12 @@ function App() {
                 aria-label="Visit Pranav's YouTube"
               >
                 <FaYoutube size={40} />
-              </motion.a>
+              </motion.a> */}
             </motion.div>
           </motion.section>
         </div>
 
-        {/* Footer: Made with ❤️ by Pranav */}
+        {/* Footer: Made with ❤️ by Eswar */}
         <motion.footer
           className="w-full py-6 text-center text-gray-400 text-sm bg-dark-gray"
           initial={{ opacity: 0, y: 20 }}
@@ -863,7 +1148,7 @@ function App() {
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          Made with <span style={{ color: "#ff6b6b" }}>♥</span> by Pranav
+          Made with <span style={{ color: "#ff6b6b" }}>♥</span> by Eswar
         </motion.footer>
 
         {/* Dock - Conditionally rendered with AnimatePresence */}
