@@ -30,7 +30,7 @@ import ageProjectImage from './assets/age.jpg';
 import portfolioWebsiteImage from './assets/portfolio_website.png'; // Make sure this is .png or .jpg based on your file
 
 // NEW: Import images for new projects
-import mentalHealthImage from './assets/mental_health_sql.jpg';
+import mentalHealthImage from './assets/heartt.webp';
 import documentEditorImage from './assets/document_editor_ai.jpg';
 
 
@@ -425,12 +425,14 @@ const captions = [
       degree: "Intermediate",
       institution: "Sri Chaitanya Junior College",
     },
-    // {
-    // "id": 3,
-    //   "year": "2007-2020",
-    //   "degree": "International Council of Secondary Education (ICSE)",
-    //   "institution": "Cambridge School"
-    // }
+ {
+  id: 1,
+  year: "2010-2021",
+  degree: "Secondary School (SSC)",
+  institution: "Sri chaitanya",
+  board: "State Board"
+}
+
   ], []);
 const certificationsData = useMemo(() => [
   {
@@ -566,7 +568,7 @@ const certificationsData = useMemo(() => [
     './assets/resume.jpg': resumeProjectImage, // Make sure this is .png or .jpg based on your file
     './assets/age.jpg': ageProjectImage,
     './assets/portfolio_website.jpg': portfolioWebsiteImage, // Make sure this is .png or .jpg based on your file
-    './assets/mental_health_sql.jpg': mentalHealthImage, // NEW
+    './assets/heartt.webp': mentalHealthImage, // NEW
     './assets/document_editor_ai.jpg': documentEditorImage, // NEW
   }), []);
 

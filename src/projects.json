@@ -12,7 +12,7 @@
     "title": "Heart Disease Prediction Model",
     "description": "Eveloped an interactive web application using Streamlit that collects key healthparameters and predicts heart-disease risk using a Logistic Regression model. Performed datapreprocessing and model evaluation to build a reliable Logistic Regression classifier that deliversaccurate, real time heart-disease risk assessments for users.",
     "techStack": ["PythonL", "NumPy", "Pandas"," Scikit-learn", "Streamlit"],
-    "imageSrc": "./assets/mental_health_sql.jpg",
+    "imageSrc": "./assets/heartt.webp",
     "githubLink": "https://github.com/sriramsaieswar/HEART-DISEASE-PREDICTION-MODEL"
   },
   {
