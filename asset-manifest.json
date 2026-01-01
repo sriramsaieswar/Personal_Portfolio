@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/personal-portfolio/static/css/main.2c1f8d6f.css",
+    "main.js": "/personal-portfolio/static/js/main.f15ff3c1.js",
+    "static/js/453.da5025eb.chunk.js": "/personal-portfolio/static/js/453.da5025eb.chunk.js",
+    "static/media/image_616736.jpg": "/personal-portfolio/static/media/image_616736.728286a9934a8cf52284.jpg",
+    "static/media/resume.png": "/personal-portfolio/static/media/resume.9c915fd83581a862ae88.png",
+    "static/media/portfolio_website.png": "/personal-portfolio/static/media/portfolio_website.932f9969dea8ef929eb9.png",
+    "static/media/document_editor_ai.jpg": "/personal-portfolio/static/media/document_editor_ai.30c95c06411c398993f3.jpg",
+    "static/media/Eswar-img.jpg": "/personal-portfolio/static/media/Eswar-img.10b7893a36bce205ec78.jpg",
+    "static/media/age.jpg": "/personal-portfolio/static/media/age.819a42d26b067dcee731.jpg",
+    "static/media/heartt.webp": "/personal-portfolio/static/media/heartt.aa91597eae812b071601.webp",
+    "index.html": "/personal-portfolio/index.html",
+    "main.2c1f8d6f.css.map": "/personal-portfolio/static/css/main.2c1f8d6f.css.map",
+    "main.f15ff3c1.js.map": "/personal-portfolio/static/js/main.f15ff3c1.js.map",
+    "453.da5025eb.chunk.js.map": "/personal-portfolio/static/js/453.da5025eb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2c1f8d6f.css",
+    "static/js/main.f15ff3c1.js"
+  ]
+}
