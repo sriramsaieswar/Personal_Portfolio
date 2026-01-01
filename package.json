@@ -1,8 +1,11 @@
+"homepage": "https://sriramsaieswar.github.io/Personal_Portfolio",
+
 {
   "name": "your-portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://sriramsaieswar.github.io/personal-portfolio",
+  
+
   "dependencies": {
     "framer-motion": "^11.2.10",
     "ogl": "0.0.35",
@@ -12,6 +15,7 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
+
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
