@@ -417,7 +417,7 @@ const captions = [
       year: "2023-Present",
       degree: "B.Tech. in Artificial Intelligence and Machine Learning",
       institution: "Pragati Engineering College",
-      details: "CGPA: 8.19 (expected 2027)" // Updated CGPA
+      details: "CGPA: 8.27 (expected 2027)" // Updated CGPA
     },
     {
       id: 2,
